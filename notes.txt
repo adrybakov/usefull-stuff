@@ -1,2 +1,3 @@
 ssh-keygen -l -f /etc/ssh/ssh_host_ecdsa_key.pub
 git config --global pull.rebase true
+alias glog="git log --oneline --all --graph --decorate"
