@@ -28,4 +28,7 @@ sacctmgr list associations | head -2 && sacctmgr list associations | grep $USER
 
 
 # FFmpeg that solved problem of compression artefacts (the problem was with the resolution)
-ffmpeg -i 1-1/pictures-twilight_shifted/%d.png -vcodec libx264 -pix_fmt yuv420p -b:v 1600k -filter_complex "fps=20,scale=1440:1440" -y 1-1/movie-twilight_shifted.mp4
+ffmpeg -i %d.png -vcodec libx264 -pix_fmt yuv420p -b:v 1600k -filter_complex "fps=20,scale=1440:1440" -y <output file (.mp4)>
+
+# Removing text from files
+sed -e 's/<text to remove>/<text to paste>/g' <file> > tmp && mv tmp <file>
