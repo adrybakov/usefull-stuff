@@ -1,0 +1,10 @@
+echo "test" | gpg --clearsign
+
+ls -l ~/.gnupg/**/*.lock
+
+# remove lock files
+
+# restart the agent
+gpgconf --reload gpg-agent                               
+
+echo "test" | gpg --clearsign
